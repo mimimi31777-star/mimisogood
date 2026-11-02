@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京迪士尼雙園美食攻略＆景點懶人包 🏰🌊</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Zen Maru Gothic (超可愛圓體) & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'milk-tea': {
+              50: '#FAF6F0',
+              100: '#F5ECE3',
+              200: '#EBDCCE',
+              300: '#DFC8B5',
+              400: '#CEAC93',
+              500: '#BA8E70', // 主奶茶拿鐵色
+              600: '#A47455',
+              700: '#8A5C41',
+              800: '#6F4733',
+              900: '#4A2F22',
+            },
+            'cream': '#FDFBF7',
+            'warm-peach': '#FBECE3',
+            'soft-caramel': '#E8A575',
+            'matcha-mint': '#E4ECE3',
+            'disney-blue': '#E6F0FA'
+          },
+          fontFamily: {
+            maru: ['"Zen Maru Gothic"', '"Noto Sans TC"', 'sans-serif'],
+            sans: ['"Noto Sans TC"', 'sans-serif']
+          },
+          boxShadow: {
+            'bubbly': '0 8px 24px -4px rgba(186, 142, 112, 0.18)',
+            'card-hover': '0 14px 30px -4px rgba(164, 116, 85, 0.22)',
+            'soft-inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF6F0;
+      color: #553E32;
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      overflow-x: hidden;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #DFC8B5;
+      border-radius: 9999px;
+    }
+    .badge-bubbly {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-5px) rotate(1.2deg); }
+    }
+    .floating-badge {
+      animation: gentleFloat 4s ease-in-out infinite;
+    }
+    .tab-active {
+      background-color: #BA8E70;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(186, 142, 112, 0.3);
+    }
+    .tab-inactive {
+      background-color: #F5ECE3;
+      color: #6F4733;
+    }
+  </style>
+</head>
+<body class="selection:bg-milk-tea-300 selection:text-milk-tea-900 pb-20">
+
+  <!-- 頂部導航 -->
+  <nav class="sticky top-3 z-50 max-w-5xl mx-auto px-4">
+    <div class="bg-cream/95 backdrop-blur-md border border-milk-tea-200/90 rounded-full px-5 py-3 shadow-bubbly flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">✨</span>
+        <span class="font-bold text-base md:text-lg text-milk-tea-800 tracking-wide">Disney 雙園美食景點攻略</span>
+      </div>
+      <div class="hidden md:flex space-x-1 lg:space-x-3 text-sm font-bold text-milk-tea-700">
+        <a href="#food-section" class="px-3 py-1.5 rounded-full hover:bg-milk-tea-100 transition-all">🍽️ 雙園美食</a>
+        <a href="#map-section" class="px-3 py-1.5 rounded-full hover:bg-milk-tea-100 transition-all">🗺️ 景點地圖</a>
+        <a href="#prep-section" class="px-3 py-1.5 rounded-full hover:bg-milk-tea-100 transition-all">📝 必備清單</a>
+        <a href="#tip-section" class="px-3 py-1.5 rounded-full hover:bg-milk-tea-100 transition-all">💡 預約技巧</a>
+      </div>
+      <a href="https://www.tokyodisneyresort.jp/tc/ticket/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-milk-tea-500 to-soft-caramel text-white text-xs md:text-sm font-bold px-4 py-2 rounded-full shadow-md hover:brightness-105 active:scale-95 transition-all flex items-center gap-1.5">
+        <i class="fa-solid fa-ticket text-xs"></i> 官方訂票
+      </a>
+    </div>
+  </nav>
+
+  <!-- 主標題區 -->
+  <header class="max-w-5xl mx-auto px-4 pt-8 pb-6 text-center relative">
+    <div class="inline-block bg-milk-tea-100 border border-milk-tea-200 text-milk-tea-700 text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-3 floating-badge">
+      🎀 奶茶色系・東京迪士尼樂園 (Land) ＋ 海洋 (Sea) 各 1 天全攻略
+    </div>
+    <h1 class="text-3xl md:text-5xl font-black text-milk-tea-900 tracking-tight mb-3">
+      迪士尼雙園美食景點懶人包 🥞
+    </h1>
+    <p class="text-milk-tea-700 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+      為你精心整頓樂園與海洋兩大園區的必吃清單！從小吃外帶、超值快餐到浪漫景觀餐廳，附帶清晰價格預算、地圖分區與預約指南。
+    </p>
+
+    <!-- 基本資訊膠囊看板 -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-6 text-left">
+      <div class="bg-cream p-3.5 rounded-2xl border border-milk-tea-200/70 shadow-sm flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-warm-peach flex items-center justify-center text-milk-tea-600 text-xl">🏰</div>
+        <div>
+          <div class="text-[11px] text-milk-tea-400 font-bold">目的地</div>
+          <div class="text-sm font-black text-milk-tea-800">樂園 + 海洋</div>
+        </div>
+      </div>
+      <div class="bg-cream p-3.5 rounded-2xl border border-milk-tea-200/70 shadow-sm flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-matcha-mint flex items-center justify-center text-milk-tea-600 text-xl">🗓️</div>
+        <div>
+          <div class="text-[11px] text-milk-tea-400 font-bold">建議天數</div>
+          <div class="text-sm font-black text-milk-tea-800">各 1 天 (共 2 日)</div>
+        </div>
+      </div>
+      <div class="bg-cream p-3.5 rounded-2xl border border-milk-tea-200/70 shadow-sm flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-milk-tea-100 flex items-center justify-center text-milk-tea-600 text-xl">🍱</div>
+        <div>
+          <div class="text-[11px] text-milk-tea-400 font-bold">美食層級</div>
+          <div class="text-sm font-black text-milk-tea-800">點心 / 快餐 / 景觀</div>
+        </div>
+      </div>
+      <div class="bg-cream p-3.5 rounded-2xl border border-milk-tea-200/70 shadow-sm flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-milk-tea-600 text-xl">📱</div>
+        <div>
+          <div class="text-[11px] text-milk-tea-400 font-bold">點餐神器</div>
+          <div class="text-sm font-black text-milk-tea-800">Mobile Order</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 space-y-12">
+
+    <!-- 區塊 1：雙園美食全推薦與價格標註（重點核心） -->
+    <section id="food-section" class="bg-cream rounded-3xl p-6 md:p-8 border border-milk-tea-200 shadow-bubbly space-y-6">
+      
+      <!-- 區塊標題與匯率提示 -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-milk-tea-200 pb-4">
+        <div>
+          <span class="badge-bubbly bg-warm-peach text-milk-tea-800 mb-1">🍴 Delicious Dining</span>
+          <h2 class="text-2xl md:text-3xl font-black text-milk-tea-900">迪士尼雙園特色美食推薦</h2>
+          <p class="text-xs md:text-sm text-milk-tea-600 mt-1">分為三大價位區間，點選切換樂園與海洋專屬美食！</p>
+        </div>
+        <div class="text-xs font-bold text-milk-tea-600 bg-milk-tea-100 px-3 py-1.5 rounded-full self-start md:self-auto flex items-center gap-1.5">
+          <i class="fa-solid fa-coins text-soft-caramel"></i> 匯率參考：1 JPY ≈ 0.21 TWD
+        </div>
+      </div>
+
+      <!-- 園區快速切換 Tab -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-milk-tea-50 p-2 rounded-2xl border border-milk-tea-200">
+        <div class="flex gap-2 w-full sm:w-auto">
+          <button id="park-btn-land" onclick="switchPark('land')" class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 tab-active">
+            <span>🏰</span> 東京迪士尼樂園 (Land)
+          </button>
+          <button id="park-btn-sea" onclick="switchPark('sea')" class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 tab-inactive">
+            <span>🌊</span> 東京迪士尼海洋 (Sea)
+          </button>
+        </div>
+
+        <!-- 價格區間過濾標籤 -->
+        <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto custom-scroll pb-1 sm:pb-0">
+          <span class="text-xs font-bold text-milk-tea-500 whitespace-nowrap mr-1">價位篩選:</span>
+          <button onclick="filterPrice('all')" id="filter-all" class="text-xs font-bold px-3 py-1.5 rounded-lg bg-milk-tea-500 text-white shadow-sm transition">全部</button>
+          <button onclick="filterPrice('tier1')" id="filter-tier1" class="text-xs font-bold px-3 py-1.5 rounded-lg bg-white border border-milk-tea-200 text-milk-tea-700 hover:bg-milk-tea-100 transition whitespace-nowrap">平價點心 (400~900円)</button>
+          <button onclick="filterPrice('tier2')" id="filter-tier2" class="text-xs font-bold px-3 py-1.5 rounded-lg bg-white border border-milk-tea-200 text-milk-tea-700 hover:bg-milk-tea-100 transition whitespace-nowrap">平價快餐 (1000~1800円)</button>
+          <button onclick="filterPrice('tier3')" id="filter-tier3" class="text-xs font-bold px-3 py-1.5 rounded-lg bg-white border border-milk-tea-200 text-milk-tea-700 hover:bg-milk-tea-100 transition whitespace-nowrap">景觀特色 (2000~4000円)</button>
+        </div>
+      </div>
+
+      <!-- 美食卡片容器 -->
+      <div id="food-cards-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- 由 JavaScript 動態生成渲染 -->
+      </div>
+
+      <!-- 貼心預約與用餐密技提示框 -->
+      <div id="tip-section" class="bg-gradient-to-r from-warm-peach to-milk-tea-100 rounded-2xl p-4 border border-milk-tea-300 text-xs md:text-sm text-milk-tea-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div class="flex items-start gap-2.5">
+          <span class="text-2xl">💡</span>
+          <div>
+            <div class="font-extrabold text-milk-tea-900">點餐與預約秘笈：</div>
+            <p class="text-milk-tea-700 text-xs leading-relaxed mt-0.5">
+              想享用中價位餐廳（如卡納雷托、紅心女王或藍灣餐廳），務必於入園前 <strong>1 個月</strong>在官方 App 預約 <strong>Priority Seating</strong>，或入園當天 09:00 搶開園名額。快餐小吃強烈建議善用 App 的 <strong>Disney Mobile Order</strong>，免排長隊直接領餐！
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 區塊 2：雙園景點分區地圖指南 -->
+    <section id="map-section" class="space-y-6">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="badge-bubbly bg-milk-tea-200 text-milk-tea-800 mb-2">🗺️ Area & Highlights</span>
+        <h2 class="text-3xl font-black text-milk-tea-900">雙園景點地圖與園區分佈</h2>
+        <p class="text-sm text-milk-tea-600 mt-1">點擊園區區塊，即可查看特色餐廳分佈與重點必玩設施！</p>
+      </div>
+
+      <div class="bg-cream rounded-3xl p-6 border border-milk-tea-200 shadow-bubbly">
+        <!-- 園區地圖切換選單 -->
+        <div class="flex justify-center mb-6">
+          <div class="inline-flex bg-milk-tea-100 p-1 rounded-2xl border border-milk-tea-200">
+            <button id="map-tab-land" onclick="switchMapPark('land')" class="px-5 py-2 rounded-xl text-xs md:text-sm font-black transition tab-active">
+              🏰 樂園 (Disneyland) 7大區域
+            </button>
+            <button id="map-tab-sea" onclick="switchMapPark('sea')" class="px-5 py-2 rounded-xl text-xs md:text-sm font-black transition tab-inactive">
+              🌊 海洋 (DisneySea) 8大海港
+            </button>
+          </div>
+        </div>
+
+        <!-- 樂園 (Disneyland) 地圖區塊 -->
+        <div id="land-map-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5">
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('land-world')">
+            <div class="text-2xl mb-1">🛍️</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">世界市集</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">米奇鬆餅、最佳美國鬆餅</div>
+          </div>
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('land-adventure')">
+            <div class="text-2xl mb-1">🦜</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">探險樂園</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">加勒比海盜、藍灣餐廳</div>
+          </div>
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('land-western')">
+            <div class="text-2xl mb-1">🤠</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">西部樂園</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">煙燻火雞腿、頑熊咖哩</div>
+          </div>
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('land-critter')">
+            <div class="text-2xl mb-1">🪵</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">動物天地</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">飛濺山、莎拉奶奶廚房</div>
+          </div>
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('land-fantasy')">
+            <div class="text-2xl mb-1">👑</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">夢幻樂園</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">美女與野獸、紅心女王</div>
+          </div>
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('land-toon')">
+            <div class="text-2xl mb-1">🎨</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">卡通城</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">米奇手套刈包、唐老鴨腳掌</div>
+          </div>
+          <div class="bg-milk-tea-50 hover:bg-milk-tea-100 p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition col-span-2 sm:col-span-1" onclick="showAreaDetail('land-tomorrow')">
+            <div class="text-2xl mb-1">🚀</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">明日樂園</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">杯麵漢堡、太空山、電光餐廳</div>
+          </div>
+        </div>
+
+        <!-- 海洋 (DisneySea) 地圖區塊 (預設隱藏) -->
+        <div id="sea-map-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 hidden">
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-mediterranean')">
+            <div class="text-2xl mb-1">⛵</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">地中海港灣</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">卡納雷托餐館、尚比尼兄弟</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-american')">
+            <div class="text-2xl mb-1">🚢</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">美國海濱</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">S.S.哥倫比亞郵輪、玩具總動員</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-port')">
+            <div class="text-2xl mb-1">🌊</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">發現港</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">水平線海灣餐廳、海邊小吃</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-delta')">
+            <div class="text-2xl mb-1">🌿</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">失落河三角洲</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">猶加敦基地烤雞腿、印第安納</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-arabian')">
+            <div class="text-2xl mb-1">🕌</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">阿拉伯海岸</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">凱茲堡咖哩飯佐烤餅、神燈</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-mermaid')">
+            <div class="text-2xl mb-1">🧜‍♀️</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">美人魚礁湖</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">川頓海底王國、粉嫩拍照點</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-mysterious')">
+            <div class="text-2xl mb-1">🌋</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">神秘島</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">地心探險之旅、餃子熱狗包</div>
+          </div>
+          <div class="bg-disney-blue/60 hover:bg-disney-blue p-3.5 rounded-2xl border border-milk-tea-200 cursor-pointer transition" onclick="showAreaDetail('sea-springs')">
+            <div class="text-2xl mb-1">❄️</div>
+            <div class="font-extrabold text-sm text-milk-tea-800">夢幻泉鄉</div>
+            <div class="text-[11px] text-milk-tea-600 mt-0.5">冰雪奇緣、長髮公主、皇家宴會</div>
+          </div>
+        </div>
+
+        <!-- 區域詳細互動說明框 -->
+        <div id="area-detail-box" class="mt-5 p-4 rounded-2xl bg-milk-tea-50/90 border border-milk-tea-200 text-xs md:text-sm text-milk-tea-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">👆</span>
+            <span id="area-detail-text">點擊上方任意區域，快速查看代表景點與該區必吃指南！</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 區塊 3：行前準備與行李互動清單 -->
+    <section id="prep-section" class="bg-cream rounded-3xl p-6 md:p-8 border border-milk-tea-200 shadow-bubbly">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-milk-tea-200 gap-3">
+        <div>
+          <div class="inline-flex items-center gap-2 text-milk-tea-600 font-bold text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-list-check"></i> Checklist
+          </div>
+          <h2 class="text-2xl font-black text-milk-tea-900 mt-1">2天雙園行前準備互動清單</h2>
+        </div>
+        <!-- 完成進度 -->
+        <div class="flex items-center gap-3 bg-milk-tea-50 px-4 py-2 rounded-2xl border border-milk-tea-200">
+          <div class="text-xs font-bold text-milk-tea-700">準備完成度:</div>
+          <div class="w-24 md:w-32 bg-milk-tea-200 rounded-full h-3 overflow-hidden">
+            <div id="progress-bar" class="bg-milk-tea-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <span id="progress-text" class="text-xs font-extrabold text-milk-tea-800 min-w-[2.5rem]">0%</span>
+        </div>
+      </div>
+
+      <!-- 清單內容列表 -->
+      <div class="grid md:grid-cols-2 gap-3.5 mt-6" id="checklist-container">
+        <!-- JS 會渲染清單項目 -->
+      </div>
+
+      <!-- 自訂清單新增輸入框 -->
+      <div class="mt-6 pt-4 border-t border-dashed border-milk-tea-200 flex flex-col sm:flex-row gap-2">
+        <input type="text" id="custom-item-input" placeholder="✨ 新增專屬準備物品（例如：水壺、防曬乳、米奇髮箍）" 
+               class="flex-1 bg-milk-tea-50/70 border border-milk-tea-300/80 rounded-2xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-milk-tea-400 text-milk-tea-800 placeholder-milk-tea-400">
+        <button onclick="addCustomItem()" class="bg-milk-tea-600 hover:bg-milk-tea-700 text-white font-bold text-sm px-6 py-2.5 rounded-2xl transition shadow-sm flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-plus text-xs"></i> 加入清單
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁腳 -->
+  <footer class="mt-16 text-center text-xs text-milk-tea-600 border-t border-milk-tea-200 pt-8 pb-4">
+    <p class="font-bold">✨ 預祝你的東京迪士尼樂園 ＋ 海洋雙園美食探索之旅幸福滿載！🧸</p>
+    <p class="text-milk-tea-400 mt-1">本頁面為旅遊資訊與美食筆記整理，商標與版權皆屬 Tokyo Disney Resort 原官方所有。</p>
+  </footer>
+
+  <!-- 邏輯腳本 JavaScript -->
+  <script>
+    // 雙園完整美食資料庫
+    const foodDatabase = [
+      // === 樂園 Disneyland ===
+      {
+        id: 'l1',
+        park: 'land',
+        tier: 'tier1',
+        name: '米奇造型鬆餅',
+        restaurant: '最佳美國鬆餅公司 (Great American Waffle Co.)',
+        area: '世界市集',
+        icon: '🥞',
+        bg: '#FDF0E2',
+        priceJpy: 600,
+        priceTwd: 126,
+        badge: '樂園必打卡',
+        desc: '樂園最經典標誌甜點！現烤出爐外皮金黃酥脆、內層蓬鬆柔軟，淋上楓糖漿或時令水果醬，拍照與美味度雙滿分！'
+      },
+      {
+        id: 'l2',
+        park: 'land',
+        tier: 'tier1',
+        name: '米奇手套刈包 / 唐老鴨掌刈包',
+        restaurant: '輝兒杜兒路兒好時光咖啡 (Huey, Dewey and Louie)',
+        area: '卡通城',
+        icon: '🍔',
+        bg: '#FFF6D6',
+        priceJpy: 600,
+        priceTwd: 126,
+        badge: '超萌手持鹹食',
+        desc: '可愛爆表！以米奇白手套與唐老鴨黃色腳掌為包子造型，夾入炸雞蛋沙拉或酥脆炸蝦排，份量恰好，邊走邊吃最方便。'
+      },
+      {
+        id: 'l3',
+        park: 'land',
+        tier: 'tier1',
+        name: '煙燻火雞腿 (Smoked Turkey Leg)',
+        restaurant: '廚房寶藏 / 西部樂園推車',
+        area: '西部樂園',
+        icon: '🍗',
+        bg: '#FBE8DF',
+        priceJpy: 900,
+        priceTwd: 189,
+        badge: '排隊肉食霸主',
+        desc: '迪士尼歷久不衰的鹹食神作！拿在手裡沉甸甸，肉質厚實多汁、帶有濃郁獨特煙燻香氣，排隊玩設施補充熱量必備。'
+      },
+      {
+        id: 'l4',
+        park: 'land',
+        tier: 'tier2',
+        name: '日式炸豬排與炸雞咖哩飯',
+        restaurant: '頑熊餐廳 (Hungry Bear Restaurant)',
+        area: '西部樂園',
+        icon: '🍛',
+        bg: '#F7EBDD',
+        priceJpy: 1200,
+        priceTwd: 252,
+        badge: '全園CP值之王',
+        desc: '公認CP值最高！濃郁偏甜的日式咖哩醬鋪在熱騰騰米飯上，配上酥脆炸豬排或炸雞，份量十足且出餐速度極快。'
+      },
+      {
+        id: 'l5',
+        park: 'land',
+        tier: 'tier2',
+        name: '杯麵漢堡套餐 / 電光牛肉飯',
+        restaurant: '明日樂園舞台餐廳 / 小瑞電光餐廳',
+        area: '明日樂園',
+        icon: '🍱',
+        bg: '#EAF0F6',
+        priceJpy: 1330,
+        priceTwd: 280,
+        badge: '快速飽腹首選',
+        desc: '白胖可愛的「杯麵大頭漢堡」吸睛度破表，餐廳空間極大且冷氣充足，還有米奇炸雞塊與三眼怪麻糬，歇腳補給最便利。'
+      },
+      {
+        id: 'l6',
+        park: 'land',
+        tier: 'tier3',
+        name: '心形漢堡排與無頭騎士蛋糕',
+        restaurant: '紅心女王宴會廳 (Queen of Hearts)',
+        area: '夢幻樂園',
+        icon: '👑',
+        bg: '#FDEAE8',
+        priceJpy: 2480,
+        priceTwd: 520,
+        badge: '愛麗絲童話沉浸',
+        desc: '一秒踏入愛麗絲夢遊仙境的紅心王國！自助托盤取餐模式，招牌愛心漢堡排多汁軟嫩，甜點餐盤精巧，隨手拍都像童話。'
+      },
+      {
+        id: 'l7',
+        park: 'land',
+        tier: 'tier3',
+        name: '水岸浪漫精緻洋食套餐',
+        restaurant: '藍灣餐廳 (Blue Bayou Restaurant)',
+        area: '探險樂園',
+        icon: '🍷',
+        bg: '#E5ECF2',
+        priceJpy: 3800,
+        priceTwd: 798,
+        badge: '河畔浪漫情調',
+        desc: '坐落在「加勒比海盜」航道旁，終年籠罩於南部水岸黃昏螢火蟲微光中。主打牛排與烤海鮮套餐（需提早預約 Priority Seating）。'
+      },
+
+      // === 海洋 DisneySea ===
+      {
+        id: 's1',
+        park: 'sea',
+        tier: 'tier1',
+        name: '三眼怪麻糬 (3顆入)',
+        restaurant: '紐約美味工房 / 多個外帶小吃攤',
+        area: '地中海港灣 & 美國海濱',
+        icon: '🍡',
+        bg: '#E4ECE3',
+        priceJpy: 400,
+        priceTwd: 84,
+        badge: '海洋打卡第一名',
+        desc: '一盒包含三種口味（草莓、巧克力、香濃卡士達）。外皮冰涼軟Q不黏牙，一口一顆萌翻天，也可加購專屬造型盒帶回家！'
+      },
+      {
+        id: 's2',
+        park: 'sea',
+        tier: 'tier1',
+        name: '唐老鴨救生圈包 (鮮蝦肉餡)',
+        restaurant: '海邊小吃 (Seaside Snacks)',
+        area: '發現港',
+        icon: '🛟',
+        bg: '#FDF2D9',
+        priceJpy: 600,
+        priceTwd: 126,
+        badge: '鮮美熱騰騰',
+        desc: '粉白相間的唐老鴨游泳圈造型蒸包！剛掀開蒸籠熱氣騰騰，內餡包入飽滿爽脆的蝦仁豬肉餡，鮮甜多汁，散步暖手必吃。'
+      },
+      {
+        id: 's3',
+        park: 'sea',
+        tier: 'tier1',
+        name: '猶加敦香料煙燻嫩雞腿',
+        restaurant: '猶加敦基地營燒烤 (Yucatan Base Camp Grill)',
+        area: '失落河三角洲',
+        icon: '🍗',
+        bg: '#FBEADF',
+        priceJpy: 600,
+        priceTwd: 126,
+        badge: '軟嫩多汁',
+        desc: '不同於樂園火雞腿的緊實肉質，海洋的煙燻烤雞腿更為滑嫩多汁，外皮塗上特調香草香料烘烤，一口咬下肉汁滿溢。'
+      },
+      {
+        id: 's4',
+        park: 'sea',
+        tier: 'tier2',
+        name: '正宗香濃咖哩飯佐現烤薄餅 (Naan)',
+        restaurant: '凱茲堡餐飲廣場 (Casbah Food Court)',
+        area: '阿拉伯海岸',
+        icon: '🍛',
+        bg: '#F8ECDB',
+        priceJpy: 1100,
+        priceTwd: 231,
+        badge: '異國大飽足',
+        desc: '位於神燈精靈世界中！提供牛肉、雞肉及綜合蔬菜咖哩，不僅附白飯，還附上現烤熱呼呼的印度烤餅，撕著沾醬吃飽足感滿分。'
+      },
+      {
+        id: 's5',
+        park: 'sea',
+        tier: 'tier2',
+        name: '義式焗烤千層麵與海鮮披薩',
+        restaurant: '尚比尼兄弟餐廳 (Zambini Brothers)',
+        area: '地中海港灣',
+        icon: '🍕',
+        bg: '#FDF3E3',
+        priceJpy: 1200,
+        priceTwd: 252,
+        badge: '港灣景觀快餐',
+        desc: '座落在進園地中海港灣斜坡上，平價提供焗烤通心粉、香脆披薩與義大利麵。二樓戶外陽台座位還能邊吃邊遠眺港灣景色。'
+      },
+      {
+        id: 's6',
+        park: 'sea',
+        tier: 'tier3',
+        name: '威尼斯運河浪漫窯烤披薩與義麵',
+        restaurant: '卡納雷托餐館 (Ristorante di Canaletto)',
+        area: '地中海港灣 (運河旁)',
+        icon: '🍝',
+        bg: '#EAF0F6',
+        priceJpy: 3200,
+        priceTwd: 672,
+        badge: '約會情調首選',
+        desc: '毗鄰貢多拉遊船運河，宛如置身水都威尼斯。擁有真正的義式窯烤爐，披薩薄脆香濃，戶外露台席位極度熱門（務必預約 Priority Seating）。'
+      },
+      {
+        id: 's7',
+        park: 'sea',
+        tier: 'tier3',
+        name: '烤牛肉・多汁漢堡排與季節海鮮拼盤',
+        restaurant: '水平線海灣餐廳 (Horizon Bay)',
+        area: '發現港',
+        icon: '🥩',
+        bg: '#F7EAE3',
+        priceJpy: 2800,
+        priceTwd: 588,
+        badge: '舒適挑高半自助',
+        desc: '以未來遊艇俱樂部為概念的寬敞半自助餐廳。提供高品質厚切烤牛肉、多汁漢堡排與濃郁洋蔥湯，座位多且用餐體驗極其舒適。'
+      },
+      {
+        id: 's8',
+        park: 'sea',
+        tier: 'tier3',
+        name: '豪華郵輪頂級烤牛肉與龍蝦拼盤',
+        restaurant: 'S.S.哥倫比亞餐廳 (S.S. Columbia)',
+        area: '美國海濱',
+        icon: '🦞',
+        bg: '#E8EDF5',
+        priceJpy: 4200,
+        priceTwd: 882,
+        badge: '奢華復古郵輪',
+        desc: '直接登上美國海濱的巨大蒸汽客輪內部！典雅的水晶吊燈重現 20 世紀初豪華郵輪主甲板餐廳風範，提供精緻龍蝦與頂級牛排排餐。'
+      }
+    ];
+
+    // 當前過濾狀態
+    let currentPark = 'land';
+    let currentTier = 'all';
+
+    // 渲染美食清單
+    function renderFoodList() {
+      const container = document.getElementById('food-cards-grid');
+      container.innerHTML = '';
+
+      const filtered = foodDatabase.filter(item => {
+        const matchPark = item.park === currentPark;
+        const matchTier = currentTier === 'all' || item.tier === currentTier;
+        return matchPark && matchTier;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-milk-tea-400">
+            <span class="text-4xl">🍵</span>
+            <p class="mt-2 text-sm font-bold">該分類下暫無符合餐點，切換其他價位試試看吧！</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-cream rounded-3xl p-5 border border-milk-tea-200 shadow-sm hover:shadow-card-hover transition duration-200 flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="h-32 rounded-2xl flex items-center justify-center text-5xl relative overflow-hidden" style="background-color: ${item.bg};">
+              <span class="drop-shadow-sm transform hover:scale-110 transition duration-200">${item.icon}</span>
+              <span class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-sm text-[10px] font-black text-milk-tea-800 px-2.5 py-0.5 rounded-full border border-milk-tea-200/50">
+                ${item.badge}
+              </span>
+            </div>
+            <div class="mt-4">
+              <div class="flex justify-between items-start gap-1">
+                <h3 class="font-extrabold text-base md:text-lg text-milk-tea-900">${item.name}</h3>
+              </div>
+              <p class="text-xs text-milk-tea-500 font-bold mt-1">📍 ${item.restaurant}</p>
+              <p class="text-[11px] text-milk-tea-400 mt-0.5"><i class="fa-solid fa-location-dot"></i> ${item.area}</p>
+              <p class="text-xs text-milk-tea-700 mt-2.5 leading-relaxed bg-milk-tea-50/70 p-2.5 rounded-xl border border-milk-tea-200/60">
+                ${item.desc}
+              </p>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-milk-tea-100 flex justify-between items-center">
+            <span class="text-xs text-milk-tea-400 font-bold">參考價格</span>
+            <div class="text-right">
+              <span class="font-black text-base text-milk-tea-800">¥${item.priceJpy.toLocaleString()}</span>
+              <span class="text-xs font-bold text-milk-tea-500">（約 NT$${item.priceTwd}）</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // 切換園區 (Land / Sea)
+    function switchPark(park) {
+      currentPark = park;
+      const landBtn = document.getElementById('park-btn-land');
+      const seaBtn = document.getElementById('park-btn-sea');
+
+      if (park === 'land') {
+        landBtn.className = "flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 tab-active";
+        seaBtn.className = "flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 tab-inactive";
+      } else {
+        seaBtn.className = "flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 tab-active";
+        landBtn.className = "flex-1 sm:flex-initial px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 tab-inactive";
+      }
+      renderFoodList();
+    }
+
+    // 價格區間篩選
+    function filterPrice(tier) {
+      currentTier = tier;
+      ['all', 'tier1', 'tier2', 'tier3'].forEach(t => {
+        const btn = document.getElementById('filter-' + t);
+        if (t === tier) {
+          btn.className = "text-xs font-bold px-3 py-1.5 rounded-lg bg-milk-tea-500 text-white shadow-sm transition whitespace-nowrap";
+        } else {
+          btn.className = "text-xs font-bold px-3 py-1.5 rounded-lg bg-white border border-milk-tea-200 text-milk-tea-700 hover:bg-milk-tea-100 transition whitespace-nowrap";
+        }
+      });
+      renderFoodList();
+    }
+
+    // 切換地圖顯示園區
+    function switchMapPark(park) {
+      const landCont = document.getElementById('land-map-container');
+      const seaCont = document.getElementById('sea-map-container');
+      const landTab = document.getElementById('map-tab-land');
+      const seaTab = document.getElementById('map-tab-sea');
+
+      if (park === 'land') {
+        landCont.classList.remove('hidden');
+        seaCont.classList.add('hidden');
+        landTab.className = "px-5 py-2 rounded-xl text-xs md:text-sm font-black transition tab-active";
+        seaTab.className = "px-5 py-2 rounded-xl text-xs md:text-sm font-black transition tab-inactive";
+      } else {
+        seaCont.classList.remove('hidden');
+        landCont.classList.add('hidden');
+        seaTab.className = "px-5 py-2 rounded-xl text-xs md:text-sm font-black transition tab-active";
+        landTab.className = "px-5 py-2 rounded-xl text-xs md:text-sm font-black transition tab-inactive";
+      }
+    }
+
+    // 區域點選詳細提示字典
+    const areaDetails = {
+      'land-world': '【世界市集】：樂園入口主幹道，維多利亞風格玻璃拱廊商街。必吃「最佳美國鬆餅公司」現烤米奇鬆餅，閉園前在此買伴手禮最齊全！',
+      'land-adventure': '【探險樂園】：熱帶雨林與海盜冒險氛圍。「加勒比海盜」設施旁隱藏著「藍灣餐廳」，可邊看小船悠遊邊吃排餐。',
+      'land-western': '【西部樂園】：美國拓荒狂野風情，聚集超高人氣平價「頑熊咖哩餐廳」與香氣撲鼻的「煙燻火雞腿」推車！巨雷山過山車就在這。',
+      'land-critter': '【動物天地】：飛濺山瀑布所在地，小動物們的童趣棲息地，有森林鄉村風的「莎拉奶奶廚房」蛋包飯。',
+      'land-fantasy': '【夢幻樂園】：灰姑娘城堡與美女與野獸城堡矗立於此！必訪《愛麗絲夢遊仙境》主題的「紅心女王宴會廳」享用愛心漢堡排。',
+      'land-toon': '【卡通城】：米奇與迪士尼巨星的家！色彩繽紛如卡通畫卷，「好時光咖啡」的米奇白手套刈包和唐老鴨腳掌包必打卡。',
+      'land-tomorrow': '【明日樂園】：太空山與巴斯光年未來世界，提供超酷白胖「杯麵漢堡」，小瑞電光餐廳更有三眼怪麻糬和冷氣充足的大量座位。',
+      'sea-mediterranean': '【地中海港灣】：南歐南義浪漫水都，設有運河畔「卡納雷托餐館」（窯烤披薩）及平價景觀「尚比尼兄弟餐廳」。',
+      'sea-american': '【美國海濱】：百老匯大道與港口碼頭，停靠著巨大「S.S.哥倫比亞號郵輪」，內有頂級烤牛肉牛排，也是玩具總動員所在地！',
+      'sea-port': '【發現港】：未來氣象觀測研究所，「海邊小吃」必買粉白熱騰騰的「唐老鴨救生圈包」，「水平線海灣」半自助牛排亦在此。',
+      'sea-delta': '【失落河三角洲】：印第安納瓊斯馬雅遺跡探險區，肉食控的最愛「猶加敦基地營」香料煙燻嫩雞腿就在河畔！',
+      'sea-arabian': '【阿拉伯海岸】：天方夜譚阿拉丁宮殿風情，「凱茲堡餐飲廣場」提供熱騰騰濃醇咖哩飯與現烤薄餅。',
+      'sea-mermaid': '【美人魚礁湖】：小美人魚的粉嫩海底世界，完全在室內不受天氣影響，打卡拍照與親和小朋友設施首選。',
+      'sea-mysterious': '【神秘島】：凡爾納地底科幻火山，「地心探險之旅」設施所在地，必買人氣長條「神奇餃子熱狗包」。',
+      'sea-springs': '【夢幻泉鄉】：2024最新擴建！包含冰雪奇緣艾倫戴爾王國、長髮公主天燈森林與彼得潘夢幻島，需取得 Standby Pass 或 DPA 入園。'
+    };
+
+    function showAreaDetail(key) {
+      const text = areaDetails[key];
+      if (text) {
+        document.getElementById('area-detail-text').innerText = text;
+      }
+    }
+
+    // 行前清單資料
+    const defaultChecklist = [
+      { id: 1, text: "下載 Tokyo Disney Resort App（先註冊好帳號並綁妥信用卡）", checked: true },
+      { id: 2, text: "護照、日幣現金與日本入境 Visit Japan Web (VJW) QR Code", checked: true },
+      { id: 3, text: "雙園門票預先購買，並將 QR Code 截圖 / 匯入官方 App", checked: false },
+      { id: 4, text: "大容量行動電源 1~2 顆（排隊刷 App、點餐與拍照極度耗電！）", checked: false },
+      { id: 5, text: "提前 1 個月於 App 搶訂熱門景觀餐廳 Priority Seating (優先入座)", checked: false },
+      { id: 6, text: "舒服好穿的球鞋（樂園＋海洋每日平均步數 20,000～25,000 步）", checked: false },
+      { id: 7, text: "折疊野餐墊或坐墊（城堡煙火、港灣夜間水舞秀卡位等待必備）", checked: false },
+      { id: 8, text: "晴雨兩用折疊傘、遮陽帽或冬季保暖衣物（臨海風大注意溫差）", checked: false }
+    ];
+
+    let checklistItems = [...defaultChecklist];
+
+    // 渲染清單
+    function renderChecklist() {
+      const container = document.getElementById('checklist-container');
+      container.innerHTML = '';
+
+      checklistItems.forEach((item, index) => {
+        const itemEl = document.createElement('div');
+        itemEl.className = `p-3.5 rounded-2xl border transition-all duration-200 flex items-center justify-between cursor-pointer select-none ${
+          item.checked 
+            ? 'bg-milk-tea-100/70 border-milk-tea-300 text-milk-tea-400 line-through' 
+            : 'bg-white border-milk-tea-200 text-milk-tea-800 hover:border-milk-tea-300 shadow-sm'
+        }`;
+        itemEl.onclick = () => toggleCheck(index);
+
+        itemEl.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-lg flex items-center justify-center border text-xs transition ${
+              item.checked ? 'bg-milk-tea-500 border-milk-tea-500 text-white' : 'border-milk-tea-300 bg-milk-tea-50'
+            }">
+              <i class="fa-solid fa-check ${item.checked ? 'opacity-100' : 'opacity-0'}"></i>
+            </span>
+            <span class="text-xs md:text-sm font-bold ${item.checked ? 'line-through text-milk-tea-400' : ''}">${item.text}</span>
+          </div>
+          <button onclick="event.stopPropagation(); deleteItem(${index})" class="text-milk-tea-300 hover:text-red-400 text-xs p-1 ml-2">
+            <i class="fa-regular fa-trash-can"></i>
+          </button>
+        `;
+        container.appendChild(itemEl);
+      });
+
+      updateProgress();
+    }
+
+    function toggleCheck(index) {
+      checklistItems[index].checked = !checklistItems[index].checked;
+      renderChecklist();
+    }
+
+    function deleteItem(index) {
+      checklistItems.splice(index, 1);
+      renderChecklist();
+    }
+
+    function addCustomItem() {
+      const input = document.getElementById('custom-item-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      checklistItems.push({
+        id: Date.now(),
+        text: text,
+        checked: false
+      });
+      input.value = '';
+      renderChecklist();
+    }
+
+    function updateProgress() {
+      if (checklistItems.length === 0) {
+        document.getElementById('progress-bar').style.width = '0%';
+        document.getElementById('progress-text').innerText = '0%';
+        return;
+      }
+      const doneCount = checklistItems.filter(i => i.checked).length;
+      const pct = Math.round((doneCount / checklistItems.length) * 100);
+      document.getElementById('progress-bar').style.width = pct + '%';
+      document.getElementById('progress-text').innerText = pct + '%';
+    }
+
+    // 初始化
+    window.onload = function() {
+      renderFoodList();
+      renderChecklist();
+    };
+  </script>
+</body>
+</html>
